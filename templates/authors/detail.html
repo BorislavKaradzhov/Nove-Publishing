@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+    <div class="card-header bg-dark text-white">
+        Author Profile
+    </div>
+    <div class="card-body">
+        <h2 class="card-title">{{ author.first_name }} {{ author.last_name }}</h2>
+        <h6 class="text-muted mb-3">{{ author.email }}</h6>
+        <p class="card-text">{{ author.bio }}</p>
+        
+        <hr>
+        <h5>Submissions by this Author:</h5>
+        <ul>
+            {% for sub in author.submissions.all %}
+                <li><a href="{% url 'submission-detail' sub.pk %}">{{ sub.title }}</a> ({{ sub.get_status_display }})</li>
+            {% empty %}
+                <li>No submissions yet.</li>
+            {% endfor %}
+        </ul>
+
+        <div class="mt-4">
+            <a href="{% url 'author-edit' author.pk %}" class="btn btn-warning">Edit</a>
+            <a href="{% url 'author-delete' author.pk %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'author-list' %}" class="btn btn-secondary">Back to List</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

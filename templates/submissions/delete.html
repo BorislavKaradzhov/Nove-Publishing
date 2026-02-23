@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="alert alert-danger shadow-sm">
+            <h3 class="alert-heading">⚠️ Confirm Deletion</h3>
+            <p>Are you sure you want to withdraw and delete the submission <strong>"{{ object.title }}"</strong>?</p>
+            <hr>
+            <p class="mb-0 small">This action is permanent and cannot be undone. The script and review history will be lost.</p>
+        </div>
+
+        <div class="card shadow-sm border-danger">
+            <div class="card-body bg-light">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <fieldset disabled>
+                        {{ form.as_p }}
+                    </fieldset>
+                    
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-danger">Yes, Delete Submission</button>
+                        <a href="{% url 'submission-detail' object.pk %}" class="btn btn-secondary">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

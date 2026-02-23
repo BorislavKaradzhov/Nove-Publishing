@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="alert alert-danger">
+    <h4>Delete Genre?</h4>
+    <p>Are you sure you want to delete the genre <strong>"{{ object.name }}"</strong>?</p>
+    <p class="small">Note: This will remove the genre tag from all associated books, but will not delete the books themselves.</p>
+</div>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-danger">Confirm Delete</button>
+    <a href="{% url 'genre-list' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

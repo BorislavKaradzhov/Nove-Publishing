@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="px-4 py-5 my-5 text-center bg-light rounded-3 shadow-sm">
+    <h1 class="display-5 fw-bold text-dark">Welcome to NOVE Publishing!</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4 mt-3">
+            Discovering the voices of tomorrow. We are a boutique book publisher dedicated to bringing inspiring stories to life. Aspiring authors are invited to submit their manuscripts for review by our expert editors.
+        </p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="{% url 'submission-create' %}" class="btn btn-primary btn-lg px-4 gap-3">Submit Your Script</a>
+            <a href="{% url 'submission-list' %}" class="btn btn-outline-dark btn-lg px-4">Review Submissions</a>
+        </div>
+    </div>
+</div>
+
+<div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="col d-flex align-items-start">
+        <div class="card h-100 border-0 shadow-sm w-100">
+            <div class="card-body">
+                <h3 class="fs-4 card-title">For Authors</h3>
+                <p class="card-text text-muted">Join our growing community of talented writers. Start by creating your author profile and share your bibliography and achievements with the world.</p>
+                <a href="{% url 'author-list' %}" class="btn btn-sm btn-outline-primary mt-auto">Meet Our Authors</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col d-flex align-items-start">
+        <div class="card h-100 border-0 shadow-sm w-100">
+            <div class="card-body">
+                <h3 class="fs-4 card-title">The Review Process</h3>
+                <p class="card-text text-muted">Our dedicated editors take up to a month to carefully review your submissions. Track the status of your script from 'Pending Review' to 'Accepted for Publication'.</p>
+                <a href="{% url 'submission-list' %}" class="btn btn-sm btn-outline-primary mt-auto">Track Submissions</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col d-flex align-items-start">
+        <div class="card h-100 border-0 shadow-sm w-100">
+            <div class="card-body">
+                <h3 class="fs-4 card-title">Explore Genres</h3>
+                <p class="card-text text-muted">From Sci-Fi to Romance, explore the diverse range of categories our authors write about. Help us expand our literary universe. Add a new genre, or edit or delete an existing one.</p>
+                <a href="{% url 'genre-list' %}" class="btn btn-sm btn-outline-primary mt-auto">Browse Genres</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
