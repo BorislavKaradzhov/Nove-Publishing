@@ -78,11 +78,13 @@ To run this project, you will need:
 
 4. **Set Up the Database:**
 
-Ensure PostgreSQL is running and set up your database using the credentials provided in the <code>.env</code> file.
+Ensure PostgreSQL is running and set up your database using the credentials provided in the <code>.env</code> file. Connect to the database. If new to PostgreSQL, please follow this [tutorial](https://www.w3schools.com/postgresql/postgresql_getstarted.php). To create the database, please execute the following in <code>SQL Shell (psql)</code>:
+<code>CREATE DATABASE nove_publishing_db;</code>.
+Then, connect to the database in <code>SQL Shell (psql)</code>:
+<code>\c nove_publishing_db;</code>.
    
 5. **Apply Migrations:**
     ```bash
-    python manage.py makemigrations
     python manage.py migrate
 
 6. **Create a Superuser to access the admin panel:**
