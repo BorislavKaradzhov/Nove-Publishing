@@ -64,10 +64,14 @@ To run this project, you will need:
 
 2. **Create and activate a virtual environment:**
 
-Copy the .env.template file:
-    
+First, copy the .env.template file:
+#### If using Windows Command Prompt:
+    copy .env.template .env    
+
+#### Otherwise, please use:
     cp .env.template .env
     
+Then: 
 #### Windows:
     python -m venv venv
     venv\Scripts\activate
