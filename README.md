@@ -4,8 +4,6 @@ A Django-based web application built for the **Django Basics Exam** @ SoftUni. T
 
 ## 🏆 Exam Requirements Checklist
 
-This project successfully fulfills and exceeds the exam requirements:
-
 - [x] **PostgreSQL Database:** Configured via `settings.py` and environment variables.
 - [x] **3 Django Apps:** `common` (Core/Landing), `authors` (Profiles), `submissions` (Manuscripts & Genres).
 - [x] **3 Database Models:** `Author`, `Submission`, and `Genre`.
@@ -65,11 +63,16 @@ To run this project, you will need:
     cd Nove-Publishing
 
 2. **Create and activate a virtual environment:**
-    ```bash
-    python -m venv venv
+
+Copy the .env.template file:
+    
+    cp .env.template .env
+    
 #### Windows:
+    python -m venv venv
     venv\Scripts\activate
 #### macOS/Linux:
+    python3 -m venv venv
     source venv/bin/activate
 
 3. **Install dependencies:**
